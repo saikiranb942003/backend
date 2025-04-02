@@ -81,6 +81,12 @@ arr1.forEach((x) => {
     
 })
 
+function z() {
+   console.log("hello");
+   
+}
+z();
+
 
 
 
