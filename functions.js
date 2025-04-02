@@ -45,9 +45,27 @@ const sum = (a,b) =>
     console.log(a+b);
 }
 
-sum(2,2);*/
+sum(2,2);
+
+-> for single parameter we dont use pararenthesis for mutliple parameters 
+only we use parameters
+*/
+/*const arr = [1,2,3,4,5];
+arr.forEach(x => {
+    console.log(x * 2);
+    
+})
+/* op:
+2
+4
+6
+8
+10
+*/
+
 
 //constructors
+/*
 function Alien(name,tech) 
 {
     this.name = name;
@@ -65,3 +83,11 @@ const alien2 = new Alien('kiran', 'css');
 console.log(alien1);
 alien2.work();
 
+*/
+
+/*function a(a,b) {
+    console.log(a);
+    
+}
+a(10,4);
+*/
