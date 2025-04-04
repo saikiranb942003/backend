@@ -18,6 +18,7 @@ op:
 
 
 //foreach
+
 // const arr = [1, 2, 3, 4, 5];
 //console.log(arr); //[ 1, 2, 3, 4, 5 ]
 
@@ -53,7 +54,30 @@ arr.forEach((x) => {
 2
 3
 4
+5*/
+
+/*
+const array = [1,2,3,4,5];
+array.forEach((x) => {
+    console.log(x);    
+});  
+output :
+1
+2
+3
+4
 5
+*/
+
+const array = [1,2,3,4,5];
+array.forEach((x) => {
+    console.log(x);  
+   // break;  // SyntaxError: Illegal break statement
+}); 
+
+
+
+/*
 -> in js both forEach and map are array methods that allow you o iterate over an array
 -> it returns the output in the form of variables
 -> it returns undefined
