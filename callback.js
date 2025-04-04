@@ -29,17 +29,20 @@ setTimeout( () => {
 
 const cart = ['shoes', 'pants', 'kutas'];
 
-createOrder(cart, function () {
+function createOrder(x,y) {
+    console.log("used to create an order");
+}
+
+ createOrder(cart, function () {
 
     proceedToPayment(function() {
         showOrderSummary(
             function () {
-                updateWallet()
+                updateWallet();
             }
         )
     })
-})
-
+}) 
 /*
 callback function is a function that is passed as argument in a function 
 just like a value 
