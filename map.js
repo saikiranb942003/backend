@@ -19,19 +19,20 @@ op:
 
 //foreach
 
-// const arr = [1, 2, 3, 4, 5];
-//console.log(arr); //[ 1, 2, 3, 4, 5 ]
+ //const array = [1, 2, 3, 4, 5];
+//console.log(array); //[ 1, 2, 3, 4, 5 ]
 
-/*arr.forEach((x) => {
+array.forEach((x) => {
     console.log(x);
     
 })
 
-arr.forEach((x,i,arr) => {
-    console.log(x,i,arr);
+array.forEach((x,i,array) => {
+    console.log(x,i,array);
     
 })
 
+/*
  op:
 1 0 [ 1, 2, 3, 4, 5 ]
 2 1 [ 1, 2, 3, 4, 5 ]
@@ -40,11 +41,11 @@ arr.forEach((x,i,arr) => {
 5 4 [ 1, 2, 3, 4, 5 ]
 
 
-const arr = [1, 2, 3, 4, 5];
-//arr.forEach(x);
+const array = [1, 2, 3, 4, 5];
+//array.forEach(x);
 //op: ReferenceError: x is not defined
 
-arr.forEach((x) => {
+array.forEach((x) => {
     console.log(x);
     
 })
@@ -88,13 +89,13 @@ array.forEach((x) => {
 
 // map  
 /*
-const arr = [2, 3, 4, 5, 6 ];
+const array = [2, 3, 4, 5, 6 ];
 
 function double(x) {
     return x*2; 
 }
-const newarr = arr.map(double);
-console.log(newarr);
+const newarray = array.map(double);
+console.log(newarray);
 
 /*
 op:
@@ -108,12 +109,12 @@ op:
 /*
 -> it is used to filter certain values in it
 
-const arr = [1,2,3,4,5,6,7];
+const array = [1,2,3,4,5,6,7];
 function greater(x) {
     return x > 3;
 }
-const newarr = arr.filter(greater);
-console.log(newarr);
+const newarray = array.filter(greater);
+console.log(newarray);
 
 
 
@@ -121,27 +122,27 @@ console.log(newarr);
 -> it is used to find values like sum or largest number etc
 
 
-const arr = [1,2, 3, 4, 5];
+const array = [1,2, 3, 4, 5];
 
 //normal function
-function sum(arr) {
+function sum(array) {
     let sum =0;
-    for(let i=0;i< arr.length;i++)
+    for(let i=0;i< array.length;i++)
     {
-        sum = sum + arr[i];
+        sum = sum + array[i];
     }
     return sum;
 } 
 
-console.log(sum(arr)); //op: 15
+console.log(sum(array)); //op: 15
 
-const newarr = arr.reduce(function (acc, curr) {
+const newarray = array.reduce(function (acc, curr) {
     acc = acc + curr;
     return acc;
 },0);
-console.log(newarr);
+console.log(newarray);
 
-const output = arr.reduce(function (acc,curr) {
+const output = array.reduce(function (acc,curr) {
    if(curr > acc)
    {
     acc = curr;
@@ -161,14 +162,14 @@ console.log(output);
 -> Flexibility: Offers maximum control over the iteration process.
  eg:
  
- const arr =[1, 2, 3]
- const res =[];
- for(let i =0;i<arr.length;i++)
+ const array =[1, 2, 3]
+ const result =[];
+ for(let i =0;i<array.length;i++)
  {
-    res.push(arr[i] * 2);
+    res.push(array[i] * 2);
 
  }
-console.log(res);
+console.log(result);
 // op : [ 2, 4, 6 ]
 
 
