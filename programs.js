@@ -24,7 +24,7 @@ function print(x) {
 print(0);
 
 */
-const { log } = require('console');
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -60,7 +60,7 @@ Array.prototype.customForEach = () => {
          
 }
 */
-
+/*
 Array.prototype.customForEach = function(callback) {
     for (let i = 0; i < this.length; i++) {
         callback(this[i], i, this);
@@ -86,12 +86,6 @@ function z() {
    
 }
 z();
-
-
-
-
-
-
-
+*/
 
 

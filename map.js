@@ -69,12 +69,12 @@ output :
 5
 */
 
-const array = [1,2,3,4,5];
+/*const array = [1,2,3,4,5];
 array.forEach((x) => {
     console.log(x);  
-   // break;  // SyntaxError: Illegal break statement
+    break;  // SyntaxError: Illegal break statement
 }); 
-
+*/
 
 
 /*
