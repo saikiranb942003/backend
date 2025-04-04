@@ -50,8 +50,8 @@ rl.question('Enter array elements separated by commas: ', (iarr) => {
 
 
 /*
-const arr = [1,2,3];
-arr.forEach((x) => {
+const array = [1,2,3];
+array.forEach((x) => {
     console.log(x);
     
 })
@@ -68,15 +68,16 @@ Array.prototype.customForEach = function(callback) {
 };
 
 
-let arr = [10, 20, 30];
+let array = [10, 20, 30];
 
-arr.customForEach((element, index, array) => {
+array.customForEach((element, index, array) => {
     console.log(`Element: ${element}, Index: ${index}, Array: ${array}`);
 });
+*/
+/*
+const array1 =[1,2,3];
 
-const arr1 =[1,2,3];
-
-arr1.forEach((x) => {
+array1.forEach((x) => {
     console.log(x);
     
 })

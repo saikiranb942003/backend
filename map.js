@@ -22,7 +22,7 @@ op:
  //const array = [1, 2, 3, 4, 5];
 //console.log(array); //[ 1, 2, 3, 4, 5 ]
 
-array.forEach((x) => {
+/*array.forEach((x) => {
     console.log(x);
     
 })
@@ -215,10 +215,26 @@ console.log(a + 30);
 
 */
 
+/*
+foreach : we cant use break, continue, return in 
+forEach where as we can use it normal for and while loops
+*/
+/*const array = [1,2,3,4];
+array.forEach((x)=> {
+    console.log(x);
+    break; //SyntaxError: Illegal break statement
+    
+})
 
+for(let i=1;i<=5;i++) {
+    console.log(i);
+    if(i === 3) {
+        break;
+    }
+    
+}
 
-
-
+*/
 
 
 
