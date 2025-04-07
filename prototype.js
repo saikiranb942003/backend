@@ -32,7 +32,7 @@ object2.__proto__ = object;
 //object.getIntro() //ReferenceError: getIntro is not defined
 //console.log(getIntro());  //ReferenceError: getIntro is not defined
 //object.name;  // ntg will be printed
-object2.__proto__ = object; /* by this we can access the properties of object2 also if not present we can access it from
+/* //object2.__proto__ = object,  by this we can access the properties of object2 also if not present we can access it from
 -> it from the parent object (object) in this way this inheritance works
 
 
