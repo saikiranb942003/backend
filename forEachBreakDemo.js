@@ -5,18 +5,17 @@ broken or exited early using break, continue, or return from the outer function.
 
 
 */
-
+/*
 const array = [1, 2, 3, 4, 5];
 
-/*
+
 array.forEach((num) => {
   if (num === 3) {
-    break; //  This will throw an error
+    break; //  This will throw an syntax error
   }
   console.log(num);
 });
 
-*/
 
 // instead we can use 
 /*
@@ -126,7 +125,7 @@ output :
 2
 3
 */
-
+/*
 let array2 = [9,8,7,6,5];
 for(let num in array2) {
     if(array2[num] === 6) {
@@ -135,4 +134,26 @@ for(let num in array2) {
     console.log(array2[num]);
     
 }
-  
+*/
+
+// foreach loop using return 
+let array = [1,2,3,4,5];
+array.forEach((number)=>{
+    if(number === 3)
+    {
+        return;
+    }
+    console.log(number);
+    
+})
+/*
+output:
+1
+2
+4
+5
+
+-> using return it skips only the current element like (continue in java)
+and keep executing rest elements it doesnt stop like (return in java)
+-> also break and continue is invalid in js
+*/
