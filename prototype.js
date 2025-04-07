@@ -78,7 +78,7 @@ function fun () {
 //fun(); //welcome
 //fun().mybind; // TE : Cannot read properties of undefined (reading 'mybind')
 //fun().mybind(); // TypeError: Cannot read properties of undefined (reading 'mybind')
-
+/*
 Array.prototype.len = function () {
     let c=0;
     for(i in this)
@@ -100,6 +100,18 @@ arr.length;// op: no output
 //console.log(arr.len());// 3
 arr.len(); //no op
 arr.len; // no op
+
+/*
+->hasOwnproperty() is a method in js that is used to check an object 
+directly contains a specific property and not inheriting if from its prototype chain
+
+*/
+//eg
+let obj = {a:1, b:2};
+console.log(obj.hasOwnProperty('a')); // true
+console.log(obj.hasOwnProperty('toString')); // false i.e it is inherited from prototype
+
+
 
 
 
