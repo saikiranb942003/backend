@@ -5,31 +5,31 @@ const rl = readline.createInterface({
     output: process.stdout
 }); 
 
-rl.question("enter target value :",(tar)=>{
-    tar = parseInt(tar);
+rl.question("enter target value :",(target)=>{
+    target = parseInt(target);
     //console.log(tar);
     //console.log(typeof tar);
     
-    let arr = [1,2,3,4,5,6];
+    let array = [1,2,3,4,5,6];
    // console.log(arr.length);
     
-    let l=0,h= arr.length-1,m=0;
-    while(l<=h)
+    let low=0,high= array.length-1,mid=0;
+    while(low<=high)
   { 
-    m = Math.floor((l+h) / 2);
-    if(arr[m] === tar)
+    mid = Math.floor((low+high) / 2);
+    if(array[mid] === target)
     {
-        console.log("index is "+m);
+        console.log("index is "+mid);
         rl.close();
         return;
     }
-    else if(arr[m] > tar)
+    else if(array[mid] > target)
     {
-        h = m-1;
+        high = mid-1;
     }
     else
     {
-        l = m+1;
+        low = mid +1;
     }
     
   }
