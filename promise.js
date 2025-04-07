@@ -1,5 +1,9 @@
 const cart = ['shoes', 'pants', 'kurta'];
 
+function createOrder(array,x) {
+    console.log("creating order");
+    
+}
 createOrder(cart, function (orderId)
 {
     proceedToPayment(orderId);
@@ -26,7 +30,13 @@ our code will be executed only once for sure
 
 promise.then(function (orderid) {
     proceedToPayment(orderId);
+    
 });
+
+function proceedToPayment(orderId) {
+    console.log("payment successful");
+    
+}
 
 /*
 promise has 
