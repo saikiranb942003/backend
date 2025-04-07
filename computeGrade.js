@@ -3,8 +3,8 @@ let studentDetails = {
     kiran : 65,
     madhan : 70,
     kumar : 75,
-    avinash : 80
-
+    avinash : 80,
+    sam : 'hello'
 }
 
 let totalMarks =0;
@@ -21,6 +21,9 @@ const averageOfStudents = (totalMarks/numberOfStudents);
 console.log("average of students is "+averageOfStudents);
 
 function grades(marks) {
+    if(typeof marks !== 'number' || isNaN(marks)) {
+        return 'invalid input';
+    }
     if(marks>= 90 ) {
         return 'A';
     } else if(marks >= 80) {
@@ -36,7 +39,13 @@ function grades(marks) {
 
 for(let student in studentDetails) {
     let grade = grades(studentDetails[student]);
-    console.log(student + " grade is "+ grade);
+    if( grade === 'invalid input') {
+        console.log('invalid input');
+        
+    }
+    else {
+        console.log(student + " grade is "+ grade);
+    }
     
 }
 
