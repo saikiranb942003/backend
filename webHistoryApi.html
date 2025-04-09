@@ -1,0 +1,30 @@
+<!--
+
+-> the web histrory api provides easy methods to access the windows.history object
+-> the window.history object contains the urls (web sites) visited by the user
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web history demo</title>
+</head>
+<body>
+    <h1>WEB history Demo</h1>
+    <button onclick="myFunction()">Go Back</button>
+
+    <script>
+        function myFunction() {
+            window.history.back();
+            // the back() method loads the previous url in the window.history list
+            //it is same as clicking the back arrow in your browser
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!--
+
+-> locate the users position
+-> the html geolocation api is used to get
+the geographical position of a user
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Geolocation API example</h2>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) { // Checks if Geolocation is supported
+    navigator.geolocation.getCurrentPosition(showPosition);
+    //The getCurrentPosition() method is used to return the user's position.
+    // the coordinates object is returned to the function (showPosition)
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this device.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+  // prints the location
+}
+</script>
+
+</body>
+</html>
