@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <script >
+          
+        function createItems() {
+            localStorage.setItem("mytime",Date.now());
+            localStorage.setItem("myname", 'sai');
+            localStorage.setItem("myage",22);
+        }
+
+        function deleteItems() {
+            localStorage.clear();
+        }
+
+        function displayItems() {
+           // var i;
+
+            var time = localStorage.getItem('mytime');
+            var name = localStorage.getItem('myname');
+            var age = localStorage.getItem('myage');
+            document.write(time+'<br>');
+            document.write(name+'<br>');
+            document.write(age);
+        }
+        
+        createItems();
+        displayItems();
+    </script>
+</body>
+</html>
+
+

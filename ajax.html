@@ -1,0 +1,69 @@
+<!--
+/*
+-> ajax is used for :
+-> update a web page without reloading the page
+-> request data from a server after page has loaded
+-> receive data from the server after the page has loaded
+-> send data to the server
+*/
+-> ajax is asynchronous javascript and xml
+-> it is not programming language it is a combination of:
+   -> a browser build-in XMLHttpRequest object (to request data from a web server)
+   -> javascript and html dom (to display or use the data)
+
+-> ajax applications might use xml to transport data, but it is equally common
+to transport data as plain text or json text
+-> The XMLHttpRequest object is used to exchange data with a server
+-> to send a request to a server we use open() and send() methods of the
+XMLHttpRequest object
+-> to create xmlhttprequest object
+var xhttp = new XMLHttpRequest();
+-> open(method, url, async) : specifies the request
+   -> method : request type get or post
+   -> url : the file location
+   -> async : true (asynchronous) or false (synchronous)
+-> send() : sends the request to the server used for get request
+-> send(String) : sends the request to the server used for post requests
+//eg : xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();
+
+// get request 
+xhttp.open("GET", "demo_get.asp", true);
+xhttp.send();
+
+// post request
+xhttp.open("POST", "demo_post.asp", true);
+xhttp.send();
+
+
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+   <div id="demo">
+      <h1>The XMLHttpRequest Object</h1>
+      <button type="button" onclick="loadDoc()">Change Content</button>
+   </div>
+
+   <script>
+      function loadDoc() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("demo").innerHTML =
+               this.responseText;
+            }
+         };
+         xhttp.open("GET", "ajax_info.txt", true);
+         xhttp.send();
+      }
+   </script>
+
+</body>
+</html>
+
+

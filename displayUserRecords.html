@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LocalStorage Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+    }
+    button {
+      margin: 10px 5px 20px 0;
+      padding: 8px 16px;
+    }
+    #output {
+      border: 1px solid #ccc;
+      padding: 15px;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Information</h2>
+
+  <input type="text" id="userName" placeholder="Username">
+  <input type="text" id="firstName" placeholder="First Name">
+  <input type="text" id="lastName" placeholder="Last Name">
+  <input type="text" id="address" placeholder="Address">
+
+  <button onclick="storeData()">Store Record</button>
+  <button onclick="retrieveData()">Retrieve Record</button>
+
+  <div id="output"></div>
+
+ 
+  <script src="displayUserRecords.js"></script>
+</body>
+</html>
