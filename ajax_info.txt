@@ -1,0 +1,4 @@
+ajax is asynchronous javascript and xml
+-> it is not programming language it is a combination of:
+-> a browser build-in XMLHttpRequest object (to request data from a web server)
+-> javascript and html dom (to display or use the data)
