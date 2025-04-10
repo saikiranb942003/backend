@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search for user</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    input {
+      padding: 5px;
+      width: 300px;
+      font-size: 16px;
+    }
+    table {
+      margin-top: 15px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Search for user</h2>
+  <input type="text" id="searchInput" placeholder="Search by name or email...">
+
+  <div id="resultTable"></div>
+
+  <script>
+    // Simulated backend JSON data
+    const userData = {
+      "users": [
+        {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+        {"name":"Bob", "email":"bob32@gmail.com"},
+        {"name":"Jai", "email":"jai87@gmail.com"},
+        {"name":"Shien", "email":"shein@gmail.com"},
+        {"name":"Anax", "email":"anax95@gmail.com"},
+        {"name":"Anajali", "email":"anajali95@gmail.com"}
+        
+      ]
+    };
+
+    $(document).ready(function() {
+        //$(document).ready(): code gets executed once the page is fully loaded.
+      $("#searchInput").on("keyup", function() {
+        // on("keyup", function ()): Adds a listener to the input field. Every time the user types and release the key, this function runs.
+        let keyword = $(this).val().toLowerCase();
+
+        if (keyword.length > 2) {
+          // Simulate AJAX call
+          setTimeout(() => {
+            const filteredUsers = userData.users.filter(user =>
+              user.name.toLowerCase().includes(keyword) ||
+              user.email.toLowerCase().includes(keyword)
+              // used to store the data of the users who are searched for
+            );
+
+            if (filteredUsers.length > 0) {
+              let html = `<table>
+                <thead><tr><th>Name</th><th>Email</th></tr></thead><tbody>`;
+              // creating an empty table
+              filteredUsers.forEach(user => {
+                html += `<tr><td>${user.name}</td><td>${user.email}</td></tr>`;
+              });
+            // adding the user details to the table
+              html += `</tbody></table>`;
+              $("#resultTable").html(html);
+            } else {
+              $("#resultTable").html("<p>No users found.</p>");
+            }
+          }, 200); // Simulated delay
+        } else {
+          $("#resultTable").empty();
+          // if the keyword is less than 2 or equal to 2 characters the table will be empty
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

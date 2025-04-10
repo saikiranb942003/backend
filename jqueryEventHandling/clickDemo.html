@@ -1,0 +1,34 @@
+<!--
+
+->events are actions or occurances that happen
+when an action like clicking or hovering over a button
+takes place on a web page
+-> in jquery most dom events have an equivalent jquery method
+-> to assign a click event to all paragraphs on a page we can
+
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // The $(document).ready() method allows us to execute a function when the document is fully loaded.
+        $("p").click(function(){
+            // this functions hides the elements with <p> tag
+            $(this).hide();
+        });
+        });
+    </script>
+</head>
+<body>
+
+    <p>If you click on me, I will disappear.</p>
+    <p>try me</p>
+    <p>try me too</p>
+
+</body>
+</html>

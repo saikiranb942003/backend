@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").on({
+                // The on() method attaches one or more event handlers for the selected elements
+                mouseenter: function(){
+                   $(this).css("background-color", "lightgray");
+                   // when mouse enters its color changes to lightgray
+                },  
+                mouseleave: function(){
+                    // when mouse leaves the color changes to light blue
+                   $(this).css("background-color", "lightblue");
+                }, 
+                click: function(){
+                    //when we click the color changes to yellow
+                   $(this).css("background-color", "yellow");
+                }  
+            });
+        });
+    </script>
+</head>
+<body>
+
+<p>Click or move the mouse pointer over this paragraph.</p>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Public IP Info</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #ipInfo {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 400px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Public IP Info</h2>
+  <button id="getIpBtn">Get IP Info</button>
+  
+  <div id="ipInfo"></div>
+
+  <script>
+    $(document).ready(function() {
+      $("#getIpBtn").click(function() {
+        $.ajax({
+          url: "https://ipinfo.io/json?token=YOUR_TOKEN_HERE", // Replace with our token from ipinfo.io
+          method: "GET",
+          success: function(data) {
+            $("#ipInfo").html(`
+              <strong>IP:</strong> ${data.ip}<br>
+              <strong>City:</strong> ${data.city}<br>
+              <strong>Region:</strong> ${data.region}<br>
+              <strong>Country:</strong> ${data.country}<br>
+              <strong>Location:</strong> ${data.loc}<br>
+              <strong>ISP:</strong> ${data.org}<br>
+              <strong>Timezone:</strong> ${data.timezone}
+            `);
+          },
+          error: function() {
+            $("#ipInfo").html("<span style='color: red;'>Failed to fetch IP information.</span>");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

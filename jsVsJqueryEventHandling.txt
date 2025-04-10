@@ -1,0 +1,26 @@
+ // javascript
+-> its syntax is lot more complicated
+-> we need to write extra code to support older browsers
+like attachEvent etc
+-> no build-in chaining
+-> native javascript is faster since jquery is an abstraction layer
+-> javascript is better for performance critical applications
+-> no build-in support
+
+
+
+
+
+
+ // Jquery
+-> Jquery is more concise and easy to read 
+-> Automatically handles cross browser problems behind the scenes
+-> Jquery is better for ensuring events work consistently across all browsers
+-> jquery is good for chaining actions
+-> Slightly slower due to overhead but negligible for most use cases
+-> jquery supports namespacing events helpful for modular code
+
+
+
+
+
