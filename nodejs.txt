@@ -1,0 +1,27 @@
+->  it is a runtime environment where we can run js on standalone machine
+->  using nodejs we can build standalone projects 
+-> In nodejs we can run js code also can be used as server side component.
+-> we have expressJs as frameworks for developing web applications 
+-> it also has npm (node package manager) which take care of other dependencies which is used to 
+connect with databases etc 
+-> it has many more build-in modules also some other modules build by others
+-> we can also create our own module 
+
+-> Normally javascript runs in the browser (like chrome) but with node.js you can run js on our computer or server 
+-> which means we can build backend or server-side applications using js 
+
+-> build web servers and REST Apis 
+-> create real time apps (like chat apps) 
+-> work with databases 
+-> build comand line tools 
+-> create microservices and backend logic 
+-> Fast : built on google chromes v8 engine it compiles javascript to machine code 
+-> it uses an event driven , asyncgronous architecture great for handling many request 
+at once.
+-> we can use javascript both for frontend and backend 
+-> many packkages available in npm 
+
+
+
+
+

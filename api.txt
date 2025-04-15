@@ -1,0 +1,41 @@
+api - application programming interface
+application : any software that has specific functionality or purpose
+interface : a protocal that dictates how two applications talk to each other using request and
+responses   
+api : is simply a application to cmmunicate with each other 
+web apis : type of apis that takes client requests and return responses
+via json or xml usually over the internet 
+-> each request and response cycle is an api call 
+-> a request typically consists of a server endpoint url and a request method usaully through http
+-> the request method indicates the desired api action
+-> http response contains a status code, a header and a response
+-> response body varies depending on the request and it could be the server resource a client needs to access          
+
+Need of api :
+
+-> an api is needed to allow different software apps to communicate and interact with each other
+they are need because :
+-> communcation between systems : apis act like messengers that take request from one system and tell another system 
+what to do and then return the response
+-> eg : when we use weather app it uses api to get weather data from a remote server
+
+Reusability : Apis allow to reuse functionality across different parts of our application or even across different application
+-> eg : a payment gateway API like stripe or paypal can be used in multiple apps without building your own payment system 
+
+Abstraction : you dont need to know how somethng works internally just know how to interact with it
+-> eg : you call a getUser() API and get user info without knowing how the database fetch happens in the backend
+
+Faster Development :
+-> by using existing APIs (for things like login with google, maps, payment processing) developers can build apps faster
+
+Integration :
+-> apis are essential for integrating third party services, microservices or external platforms
+-> eg : an e-commerce app might use shipping company api to track packages
+
+Security :
+-> apis can act as a controlled gate to access only the parts of the system that are needed with authentication and authorization
+
+
+
+
+

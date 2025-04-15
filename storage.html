@@ -1,0 +1,87 @@
+<!--
+
+-> in js in web development local storage, session storage and cookies are all used to store data 
+on client side (in user browser)
+
+
+Cookies :
+
+-> small pieces of data stored by the browser often used for authentication, tracking and session management
+-> storage limit is  4kb
+-> we can set an expiration time if we dont then its a session cookie and expires when the browser is closed
+-> we can access cookie from both client and server (through HTTP headers)
+-> it is automatically sent with every HTTP request to the same domain
+-> we use when we need to send data to the server with every http request like authentication tokens, session  ids etc
+-> we want to store small, persistent data across sessions and tabs
+-> we want server side access to the data like in node.js etc
+// eg :
+-> user login sessions
+-> remembering users preferences server side
+-> in analytics and tracking (eg Google analytics)
+
+// eg :
+// Set a cookie
+document.cookie = "username=Saikiran; expires=Fri, 31 Dec 2025 12:00:00 UTC";
+
+// Read cookies
+console.log(document.cookie);
+
+
+Local Storage :
+
+-> used to store data that should persist even after the browser is closed
+-> storage limit is 5 to 10 mb
+-> it never expires untill manually cleared
+-> we can access it through javascript (client side only)
+-> it will not sent to the server with HTTP request
+-> we want to store large amount of data that doesnt need to be sent to the server
+-> we want the data to persist even after closing the browser
+-> we are working purely on the client side
+
+// egs:
+
+-> Theme settindgs (dark/light mode)
+-> user preferences
+-> Caching api responses (for offline apps)
+
+
+// eg :
+
+// Set item
+localStorage.setItem("username", "Saikiran");
+
+// Get item
+console.log(localStorage.getItem("username"));
+
+// Remove item
+localStorage.removeItem("username");
+
+Session storage :
+
+-> similar to local storage but data is cleared when the tab or window is closed
+-> its storage limit is 5mb
+> it expires when the session ends that is when the tab or window is closed
+-> it can be accessed only through javascript i.e client side
+-> we want ti store data temporarily just for single tab or session
+-> we want the data to be cleared automaticlly when the user closes the tab or browser
+-> we need to isolate data betwwen tabs ( that is each tab has its own session storage)
+
+// eg :
+
+->shopping cart data for that tab only
+-> temporary state during a session
+
+// eg :
+
+// Set item
+sessionStorage.setItem("role", "student");
+
+// Get item
+console.log(sessionStorage.getItem("role"));
+
+// Remove item
+sessionStorage.removeItem("role");
+
+
+
+-->

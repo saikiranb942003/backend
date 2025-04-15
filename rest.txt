@@ -1,0 +1,24 @@
+Rest stands for Representational state transfer - it is a set of architectural principals used
+to design web services that are simple, scalable and stateless
+-> when people talk about REST API they usually mean a web api that follows these principals and uses 
+standard http methods like get, post, put, delete etc
+-> it is a way to structure requests and responses between client and server over the web using http
+-> important features:
+-> stateless : every request is independent. The server doesnt store anything about the client previous requests 
+-> Client - Server Architecture : the client and server are seperate the frontend (like a web app) and backend (like database) can
+evolve independently
+-> uses standard http methods : GET, POST, PUT, DELETE etc
+-> everything is treated as a resource (like user, product, order) and accessed via a unique url 
+-> Data is usually returned in JSON or xml format
+
+REST APIs HTTP method:   
+
+GET : /patients : retrives all patients 
+-> GET : /patients/123 : retrives patients with ID 123
+-> POST : /patients : adds a new paient 
+-> put : /patients/123 : updates patient 123
+-> DELETE : /patients/123 : removes patient 123
+
+
+
+
