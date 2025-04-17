@@ -138,7 +138,17 @@ output:
 Start
 End
 Next Tick
+*/
 
+/*
+difference between micro and macro tasks:
+
+// microtasks
+
+-> it executes immediately after the current task, before the next macrotask or render
+-> eg : promise.then, catch, finally, 
+-> it has higher priority that is always runs before macrotasks
+-> runs as soon as possible after current exeution stack is empty
 -> process.nextTick() runs even before promises right after the current operation
 but before any other async tasks.
 -> it is the highest priority microtask in node.js
@@ -148,6 +158,13 @@ but before any other async tasks.
 -> finally setImmediate (check phase)
 -> microtasks always run before macrotasks
 -> microtasks are used for small immediate updates(like resolving promise)
+
+// macrotasks 
+
+-> executed after microtasks and usually between renders
+-> eg : setTimeout, setInterval, setImmediate, UI events
+-> lower priority than microtasks
+-> runs after mirotasks are clered
 -> macrotasks are used for bigger async operations(timers, file reads etc)
 */
 
