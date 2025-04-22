@@ -1,0 +1,69 @@
+http : protocol is used for data exchange (application layer)
+http is an application layer protocol 
+-> it is 7th layer - application layer
+-> it uses lower level protocal
+-> tcp (transmission control protocol) which sits at the transport layer 
+-> http relies on tcp to establish a reliable connection between client and server
+
+difference between http and hhtps
+
+-> http is not secure 
+-> port number is 80
+-> it doesnt uses any encryption methods
+-> it uses url like http://
+-> its mainly used for internal testing and it is simple
+
+https : http + tls/ssl
+
+tls : transport layer security is a cryptographic protocol that encrypts data 
+between client and server - used by  https 
+
+steps are :
+1. handshake
+2. authentication 
+3. encryption begins
+
+
+hyper text : hyper text is text that contains links alos known as hyper links 
+-> to orther texts or resources
+
+
+
+
+
+
+
+https : 
+-> it is more secure (uses more encription)
+-> uses port number 443
+-> uses encription like ssl/tls
+-> url starts with https://
+->used for login pages, payments, apis etc
+
+
+Raw http  request :
+
+-> a raw http request is the actual text sent from the client to the server 
+when making an http request before any browser or tool formats or parses it.
+-> it is made up of :
+-> Request line : what im asking for (method, path, protocol)
+-> Headers : metadata (browser info, accepted content)
+-> body : only for methods like post or put 
+
+-> a manually made http request that we build and send ourself - no abstraction, no high level helpers, libraries like axios, fetch, express
+-> we are working with directly with http or https modules in node.js where we can :
+   -> define Headers
+   -> set the http method
+   -> write the request body manually 
+   -> handle the response stream 
+
+
+
+
+
+
+
+
+
+
+

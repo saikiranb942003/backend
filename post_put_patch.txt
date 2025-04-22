@@ -1,0 +1,63 @@
+// post
+
+-> to create new resource
+-> it is used when we want to create a new resource on the server
+-> the server is responsible for generating the id or location of the new resource 
+-> it is not idempotent : when we send the same request multiple times it will create multiple resources
+-> when we try to add a new user to the system
+-> the server will create a new user with auto generated id (like /users/123)
+-> if we send this same post again we will get another user like /users/124.
+-> used to submit data to be processed
+-> returns status code upon success often with a location header pointing to the new resource 
+-> the body usually contains all the data for the new object
+
+
+
+// put 
+
+ -> used to replace or create resource
+ -> if we want to replace an existing resource entirely
+ -> Idempotency : sending the same put request multiple times results in the same state
+  // eg :
+
+ PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "sai kiran",
+  "email": "sai@example.com"
+}
+
+-> this will replace entire user resource at /users/123
+-> if the user originally had an age or address an they are not in the request 
+those fields get removed
+-> it wil completely update that is replaces the current representation with the new one
+-> it is used when the client has the complete new state of the object
+-> returns 200 for ok and 204 no content 
+
+
+// patch 
+
+-> partially update resource 
+-> we use it when we want to update only part of resource 
+-> we dont want to send the whole object, we  just send  the fields that changed
+-> it is Idempotency : multiple identical patch requests dont change the result beyond the first one 
+// eg we want ti change the email of a user
+
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "email": "kiran@example.com"
+}
+
+-> server only updates the email field 
+-> other data like name or address stays the same 
+-> only specified fields are updated 
+-> it is more efficient only a few changes are needed
+-> it will return 200 ok or 204 no content 
+
+
+
+
+

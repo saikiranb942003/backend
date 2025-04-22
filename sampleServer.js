@@ -1,12 +1,14 @@
 let http = require('http')
 // here http is a module
 http.createServer(function(req,res) {
-   
-   res.writeHead(200, {'content-Type ' : 'text/html'})
+   // req, res both are objects here
+   res.writeHead(200, {'Content-Type' : 'text/html'})
    // it is the http header where 200 is status code 
    res.write('hi hello welcome back');
     res.end();// to say its the end of the satements
-}).listen(8080); // 8080 is a port number where the web page displays
+}).listen(8080,() =>{
+    console.log(' Server is running at http://localhost:8080');
+}); // 8080 is a port number where the web page displays
 
 /*
 -> nodejs is usewd for io intensive work
