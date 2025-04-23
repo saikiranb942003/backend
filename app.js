@@ -15,3 +15,7 @@ app.use('/users', putRoutes);
 app.use('/users', deleteRoutes);
 
 app.listen(6000, () => console.log('Server running on http://localhost:6000'));
+/*
+You're creating a redundant object for each method (GET, POST, etc.), but ideally, you should 
+construct a single object and update it based on the method being used.
+*/

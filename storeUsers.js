@@ -8,6 +8,17 @@ let users = []; // In-memory user array
 app.get('/users', (req, res) => {
   res.json(users);
 });
+app.get('/users/:name', (req, res) => {
+  const { name } = req.params;
+
+  const user = users.find(u => u.name === name);
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+
+  res.json(user);
+});
+
 /*
 url : http://localhost:3000/Users 
 output:
@@ -18,12 +29,6 @@ output:
         "education": "BE"
     }
 ]
-
-
-
-
-
-
 */
 
 // POST a new user
@@ -31,12 +36,19 @@ app.post('/users', (req, res) => {
   const { name, city, education } = req.body;
 
   if (!name || !city || !education) {
-    return res.status(400).json({ error: 'give name, city, and education' });
+    return res.status(400).json({ error: 'Give name, city, and education' });
+  }
+
+  // Check for duplicate user
+  const duplicate = users.find(user => user.name === name);
+  if (duplicate) {
+    return res.status(409).json({ error: 'Duplicate user detected. User already exists.' });
   }
 
   users.push({ name, city, education });
   res.status(201).json({ message: 'User added', users });
 });
+
 /*
 output: using postman 
 url : http://localhost:3000/Users 
@@ -74,11 +86,29 @@ app.put('/users/:name', (req, res) => {
     return res.status(404).json({ error: 'User not found' });
   }
 
-  if (city) user.city = city;
-  if (education) user.education = education;
+  if (!('city' in req.body) || !('education' in req.body)) {
+    return res.status(400).json({ error: 'Provide complete data to update' });
+  }
+
+  let updated = false;
+
+  if ('city' in req.body && user.city !== city) {
+    user.city = city;
+    updated = true;
+  }
+
+  if ('education' in req.body && user.education !== education) {
+    user.education = education;
+    updated = true;
+  }
+
+  if (!updated) {
+    return res.status(200).json({ message: 'No changes were made', user });
+  }
 
   res.json({ message: 'User updated', user });
 });
+
 /*
 url : http://localhost:3000/Users/kiran
 output :
