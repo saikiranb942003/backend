@@ -1,0 +1,38 @@
+async function async1() { // async is used because we know that the task inside the function would be asynchoronous.
+    console.log("async1 start"); 
+    await async2(); // await is used in asynchronous function 
+    console.log("async1 end");
+}
+  
+async function async2() {
+    console.log("async2");
+}
+  
+console.log("script start");
+  
+setTimeout(function () { // macro
+    console.log("setTimeout");
+}, 0);
+  
+new Promise(function (resolve) {
+    console.log("promise1");
+    resolve();
+}).then(function () {
+    console.log("promise2");
+});
+
+async1();
+
+  
+console.log("script end");
+
+/*
+script start
+promise1
+async1 start
+async2
+script end
+promise2
+async1 end
+setTimeout
+*/
