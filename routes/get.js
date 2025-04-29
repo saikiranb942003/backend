@@ -28,12 +28,12 @@ let users = [
 ];
 
 // GET all users
-router.get('/', (req, res) => {
+router.get('/users', (req, res) => {
   res.json(users);
 });
 
 // GET single user by ID
-router.get('/:id', (req, res) => {
+router.get('/users/:id', (req, res) => {
   const userId = parseInt(req.params.id);
 
   // Check for invalid or missing ID

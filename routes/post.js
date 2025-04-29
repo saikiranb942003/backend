@@ -35,7 +35,7 @@ let users = [
 ];
 
 // POST a new user
-router.post('/', (req, res) => {
+router.post('/users', (req, res) => {
   const { name } = req.body;
   if (!name) return res.status(400).json({ message: 'Name is required' });
 

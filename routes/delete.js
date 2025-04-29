@@ -32,7 +32,7 @@ let users = [
 ];
 
 // DELETE a user by ID
-router.delete('/:id', (req, res) => {
+router.delete('/users/:id', (req, res) => {
   const userId = parseInt(req.params.id);
   const userIndex = users.findIndex(u => u.id === userId);
 

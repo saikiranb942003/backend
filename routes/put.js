@@ -37,7 +37,7 @@ let users = [
 ];
 
 // PUT (update) a user by ID
-router.put('/:id', (req, res) => {
+router.put('/users/:id', (req, res) => {
   const userId = parseInt(req.params.id);
   const { name } = req.body;
 
