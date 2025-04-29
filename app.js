@@ -18,6 +18,7 @@ middleware and routes and goes straight to the error handler
 
 const express = require('express');
 const app = express();
+const errorHandlerMiddleware = require('./middlewares/errorHandlerMiddleware');
 
 app.use(express.json());
 
@@ -25,7 +26,7 @@ app.use(express.json());
 app.get('/error', (req, res, next) => {
     const err = new Error('Something broke!');
     err.statusCode = 400;
-    next(err); // Pass the error to error-handling middleware
+    next(err);
 });
 
 // A normal route
@@ -33,42 +34,9 @@ app.get('/hello', (req, res) => {
     res.send('Hello kiran');
 });
 
-// Error Handling Middleware (must come last)
-app.use((err, req, res, next) => {
-    console.error(' Error:', err.message);
-
-    res.status(err.statusCode || 500).json({
-        error: {
-            message: err.message || 'Internal Server Error'
-        }
-    });
-});
+// Use the centralized error handler
+app.use(errorHandlerMiddleware);
 
 app.listen(5000, () => {
     console.log('Server running on http://localhost:5000');
 });
-
-/*
-output :
-url :
-output :
-Hello kiran
-
-
-
-*/
-/*
-url : http://localhost:5000/error/
-ouput:
- Error: Something broke! (in terminal)
-{
-    "error": {
-        "message": "Something broke!"
-    }
-}
-*/
-
-
-
-
-

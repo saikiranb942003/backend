@@ -1,4 +1,4 @@
-const { error } = require("console");
+
 
 function walkdog() {
     return new Promise((resolve,reject) => {
@@ -37,3 +37,13 @@ walkdog().then(value => {console.log(value);
 }).then(value => {console.log(value); return takeOutTrash();
 }).then(value => {console.log(value); console.log("all tasks are completed");
 }).catch(error => console.log(error));
+
+/*
+output :
+1. you are taking the dog out
+2. i clean the kitchen
+3.didnt take out the trash
+*/
+
+
+
