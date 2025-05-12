@@ -1,0 +1,46 @@
+// ORM (object Relational mapping)
+
+-> ORM (Object-Relational Mapping) is a technique that allows you to interact with a relational database(SQL)
+using objects in our programming language (like JavaScript, Python, or Java)
+-> It automatically converts your database tables to classes and rows to objects.
+-> A class represents a table in the database.
+-> Each instance of the class represents a row in the table.
+-> You can perform CRUD (Create, Read, Update, Delete) operations using class methods.
+// common libaries :
+-> JavaScript/Node.js: Sequelize (for MySQL, PostgreSQL), TypeORM.
+-> Python:Django ORM.
+-> Java: Hibernate.
+-> PHP: Eloquent (Laravel).
+
+// ODM (Object document Mapping)
+
+-> ODM (Object-Document Mapping) is similar to ORM, but it is used for document-based 
+databases (NoSQL) like MongoDB.
+-> It allows you to interact with database documents using objects.
+-> A class or model represents a collection (like a table).
+-> Each instance of the model represents a document (like a row).
+-> You can perform CRUD operations using model methods.
+
+// ODM libaries
+
+-> JavaScript/Node.js: Mongoose (for MongoDB).
+-> Python: PyMongo (manual), Motor (async).
+-> Java: Morphia (for MongoDB).
+
+// differences
+
+// ORM 
+-> Relational database
+-> tables, rows, coumns
+-> SQL (strucured query language)
+-> strict (fixed schema)
+// ODM 
+-> Document based (nosql) database
+-> collections and documents
+-> Nosql queries (eg; MongoDB API)
+-> flexible (dynamic schema)
+
+
+
+
+

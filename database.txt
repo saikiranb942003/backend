@@ -1,0 +1,32 @@
+-> A database is an organized collection of data that can be easily accessed, managed, and updated
+-> It is used to store, retrieve, and manipulate information efficiently
+-> Databases are commonly used in various applications, such as websites, software, and mobile apps, 
+to store user information, product data, transaction details, and much more.
+Types of databases :
+
+1. Relational databases(sql) :
+    -> Data is stored in tables with rows and columns.
+    -> Uses SQL (Structured Query Language) for data management.
+Examples: MySQL, PostgreSQL, SQLite, Oracle.
+
+2. NoSQL Databases  (Non relational):
+    -> Data can be stored in various formats (documents, key-value pairs, graphs, etc.).
+    -> More flexible with unstructured data.
+Examples: MongoDB,Cassandra, Neo4j
+
+3. Cloud databases
+4. In-Memory databases
+5. Graph databases
+
+// uses of database :
+-> Efficient Data Management: Organizes data for easy access and updates.
+-> Data Integrity: Ensures data is accurate and consistent.
+-> Scalability: Supports large amounts of data.
+-> Security: Provides user authentication and data protection.
+-> Backup and Recovery: Prevents data loss.
+
+
+
+
+
+
