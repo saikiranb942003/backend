@@ -18,7 +18,5 @@ const User = sequelize.define("User", {
   },
 });
 
-// Sync model (create table if not exists)
-await User.sync();
 
 export default User;

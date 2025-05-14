@@ -2,7 +2,7 @@
 -> the .sync() method in sequelize is used to synchronize our models(tables) with the database
 -> it ensures that the database tables match with model defination
 
-// syntax : await sequelize.sync({ sync: true});
+// syntax : await sequelize.sync({ force: true});
 
 1. sync: true - automatic table creation (force)
 -> if we use .sync({force:true}) it automatically drops and recreates all tables based on our model definations
@@ -24,6 +24,18 @@
 -> for safely adding new tables without affecting existig ones
 -> mainly used for production (stable database) 
 -> no data is lost
+
+3. alter : true 
+-> it is also option for the sequelize.sync() method
+-> it allows sequelize to automatically alter the existing database tables 
+to match our model definations without dropping them 
+-> this is safer for production environments because it does not delete any data 
+-> sequelize compares the existing database shema with our model definatioons 
+-> it then automatically adds, removes, or modifies columns as necessary to make 
+the database schema match our model definations 
+
+// eg : await sequelize.sync({ alter: true});
+
 
 
 */
