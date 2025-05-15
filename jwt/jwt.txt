@@ -1,0 +1,52 @@
+// JWT (json web token)
+
+-> jwt is an open standard for securily transmitting information between parties as a json object
+-> it is commonly used for authentication and authorization in web applications
+
+// structure of jwt 
+-> a jwt is composed of three parts seperated by (.)
+HEADER.PAYLOAD.SIGNATURE
+// Header 
+-> contains metadata about the token such as type(jwt) and the signing algorithm used (eg. HS256 for HMAC SHA256)
+// eg :
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+2. PAYLOAD 
+-> contains the claims - the actual data we want to transmit this include
+   -> standard claims: like iss (issuer), exp (expiration time), sub (subjext)
+   -> custom claims : like user id, role, or any other data
+// eg :
+{
+  "sub": "1234567890",
+  "name": "kiran kumar",
+  "admin": true,
+  "exp": 1715554799
+}
+
+3. signature 
+-> the signature is used to verify the integrity of the token it is created using
+HMACSHA256(
+  base64UrlEncode(header) + "." + 
+  base64UrlEncode(payload), 
+  secret_key
+)
+-> this ensures that if the token is tampered with, the signature will not match, making it invalid
+
+// working of jwt 
+
+-> user logs in:
+   -> user provides credentials (usname and password)
+   -> if valid the server generates a jwt and sends it to the client 
+2. client stores jwt :
+   -> the client (usually a web or mobile app) stores the jwt (in local, session storage or cookies)
+3. client sends jwt in requests :
+   -> the jwt is sent with each request (usually in the authorization: bearer <JWT> header)
+4. server verfies jwt :
+   -> the server checks the jwt signature and if valid decodes the payload to identify the user 
+   
+ 
+
+

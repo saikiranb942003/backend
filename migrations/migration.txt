@@ -1,0 +1,30 @@
+/*
+-> in sequelize (an orm for node.js) migrations and seeds are used for managing database schema and initial data setup
+
+// Migrations:
+ -> Migrations are files that allow to define and track changes to our database schema (like creating, modifyimg, or deleting tables and colums)
+ -> it helps to ensure that our database structure is versional and can be consistently modified across different environments
+(development, testing, production)
+-> npx sequelize-cli migration:generate --name migration_name: Creates a new migration file.
+-> npx sequelize-cli db:migrate: Applies all pending migrations.
+-> npx sequelize-cli db:migrate:undo: Reverts the last migration.
+
+
+// seeds :
+
+-> seeds are files that allows you to populate with initial or sample data
+-> quickly set up test or initial data without manually inserting rows
+// commands 
+
+-> npx sequelize-cli seed:generate --name seed_name: Creates a new seed file.
+-> npx sequelize-cli db:seed:all: Runs all seed files and populates the database.
+-> npx sequelize-cli db:seed:undo: Reverts the last seed file applied.
+
+-> migrations ensure that our database schema is versioned and consistent
+-> seeds allow us to quickly populate the database with data for testing or initial setup
+
+
+
+
+
+ */
