@@ -1,0 +1,28 @@
+// sequelize-cli : development dependecny or not
+
+// sequelize-cli :
+-> sequelize-cli is the command line interface(cli) for sequelize 
+-> it is used for :
+   -> geenrating models
+   -> running database migrations
+   -> seeding database data 
+-> we should install it as a development dependency (--save-dev)
+-> Development only tool: we only use sequelize-cli during development to:
+   -> create models and migrations
+   -> setup database tables
+   -> seed initial data 
+-> Not needed in production: in production our app only needs:
+   -> the sequelize library
+   -> database drivers (pg )
+   -> pre-migrated database (not the cli itself)
+-> cleaner production build: our node_modules will be smaller and more secure in production  
+
+// how to install as a development dependency 
+npm install sequelize-cli --save-dev
+
+// if we install as a production dependency (--save)
+-> our production app will incude sequelize-cli which:
+    -> increases the size of our production node_modules 
+    -> exposes unneccessary cli commands to our production environment 
+    -> is a potentially security risk
+    

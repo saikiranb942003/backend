@@ -1,0 +1,50 @@
+// obfuscation 
+-> obfuscation is the process of transforming js code into form that is difficult 
+for humans to understand but still functions normally in the browser 
+-> it is mainly used o protect code from unauthorised access reverse engineering or modification 
+
+// why use obfuscation 
+-> code protection : prevents others from easily understanding our code logic 
+-> intectual property security : protects proprietary code 
+-> prevents Tampering : makes it difficult to modify our code 
+
+// how it works 
+-> it involves
+-> variables and function renaming : changes variable names to meaning names 
+// eg :
+// original 
+function greetUser(name) {
+    console.log("hello"+name);
+}
+
+// obfuscation 
+function _0x12a3(_0x4f67) {
+  console['log']('Hello, ' + _0x4f67);
+}
+
+-> string encoding : converts strings to unreadle formats
+// Original
+console.log("Welcome to the app!");
+
+// Obfuscated
+console.log(String.fromCharCode(87,101,108,99,111,109,101,32,116,111,32,116,104,101,32,97,112,112,33));
+
+-> control flow flattening : reorganises logic with unneccessary conditions and loops 
+-> Dead code insertion : adds extra, unused code to make reverse engineering harder 
+
+// how to use obfuscate javascript code 
+-> we can use tools like 
+    -> javascript-obfuscator
+    -> npm install -g javascript-obfuscator
+
+// when to use obfuscation 
+-> when delpoying javascript code to a client
+-> for proprietary libraries or sdks
+-> for front end code we want to protect 
+
+
+// disadvantages
+-> Perforance overhead: obfuscated code can be slightly slower
+-> hard to debug: if something breaks, it is difficult to trace the error
+-> not 100% secure : advance users can still de-obfuscate the code 
+
