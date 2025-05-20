@@ -1,0 +1,31 @@
+-> in js process.exit(0) is used to immediately terminate the running process of 
+ the node.js apllication
+-> process : a global object in node.js that provides information about the current node.js process 
+-> exit() : a method that terminates the node.js process 
+-> (0) : (exit code) : a status code passed to the exit method by convention :
+    -> 0 means a successful exit 
+    -> non zero values (1,2) : indicate different types of errors 
+// eg :
+console.log("hi hello");
+
+// exit the process with a success code (0) 
+process.exit(0);
+
+console.log("this line will never be executed");
+
+// when to use :
+-> to gracefully terminate the program when it has completed all the tasks successfully 
+-> to manually control the exit status such as cli tool
+
+// note :
+-> using process.exit(0) immediately stops node.js process, without completing any pending asynchronous operations 
+(like pending file writes, http requests, database connections)
+-> for a cleaner exit that allows pending operations to complete 
+
+// eg :
+process.on('exit', (code) => {
+    console.log(`exiting with code: ${code}`);
+});
+
+// we can also use process.exitCode = 0 to set the code without exiting immediately 
+process.exitCode = 0;

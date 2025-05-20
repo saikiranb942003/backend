@@ -1,0 +1,66 @@
+JWT (json web token) vs Session based authentication
+-> jwt and session based authentication are two common methods for managing user authentication and 
+maintaining user state in a web application 
+
+// jwt (json web token) 
+ working :
+-> after a user logs in the server generates a jwt (a string of encoded data)
+-> this jwt is sent to the client (usually as a cookie or in the authorization header)
+-> the client sends this jwt with each subsequent request 
+-> the server validates the jwt without needing to maintain any session on the server 
+
+// structure of jwt 
+Header.Payload.Signature
+
+Header : contains the type of token(jwt) and the signing algorithm (eg: HS256) 
+payload : contains the user data (claims) such as userid, roles etc 
+Signature : ensures the token has not been tampered with 
+
+// eg :
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIn0.4nGpG9VZy2h5dr1g6N6kEz8X-pQ_8PeQ0-1xYtOZaN0
+
+// advantages :
+-> scalable : no need to maintain a session store on the server 
+-> stateless : the server doesnt need to track user sessions 
+-> portable : can be used across different domains
+
+// disadvantages 
+-> security risk : if the jwt is stolen, it can be used by an attacker until it expires 
+-> revocation : revoking a jwt is difficult because it is not stored on the server 
+
+
+// session based authentciation       
+
+//working 
+-> after a user logs in, the server creates a seesion and stores it(typically in memory, a database, or redis)
+-> a session id is sent to the client (usually in a cookie)
+-> with each subsequent request, the client sends the session id 
+-> the server validates this session id against its session store 
+
+// how session data is stored 
+-> on the server : the session data (user info) is stored in memory or a database 
+-> on the client : only the session id is stored(usually as a cookie)
+
+// eg : session cookie 
+session_id=abcdef1234567890
+
+// advantages of sessions :
+-> secure : server can easily invalidate a session by removing it from the session store 
+-> revocable : the server can log out a user at any time 
+
+// disadvantages :
+-> scalability : requires server side storage, making it less scalable 
+-> load balancing : requires session persistence (sticky sessions) if using mutliple servers 
+
+// when to use which 
+
+// use JWT when :
+-> we need a scable solution for a distributed system 
+-> we are working with microservices 
+-> we need a stateless API (like restfull apis)
+
+// use sessions :
+->we are building a traditional web application (like an express app with user login)
+-> we want easy session management and revocation 
+-> security is a priority(since the server can easily invalidate sessions)
+
