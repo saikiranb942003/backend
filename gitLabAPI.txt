@@ -1,0 +1,19 @@
+ 
+ /*
+ -> gitlab offers many rest api that enables developers to programatically interact with nearly every aspect of gitlab 
+ including projects, issues, users, ci/cd pipelines and more 
+ -> the api facilitates automation, integration, and customization of workflows, within gitlab 
+
+ // key features of gitlab rest api 
+
+ -> Standaried protocols : utilizes standard http methods like (get, post, put, delete ) and json data formats 
+ ensuring compatibility with a wide range of tools and systems   
+ -> API endpoint structure : all api requests are made to endpoints starting with /api/v4 
+ -> Authentication : access to certain endpoints requires authentication via personal access token with scopes 
+ -> rate limiting : api requests are subject to rate limits to prevent abuse and ensure service stability 
+
+
+
+
+
+ */

@@ -1,0 +1,19 @@
+ // issue
+
+-> in gitlab an issue is a feature used for tracking tasks, bugs, feature requests or any unit of work in the project 
+-> it is a part of gitlabs issue tracking system 
+-> can be createdby any project member 
+
+// supports
+-> labels 
+-> milestones 
+-> assignes 
+-> due dates 
+-> comments and discussions 
+-> linked merge requests 
+
+// example use cases 
+-> add login functionality 
+-> fix bug in registration form 
+-> refactor user service module 
+
