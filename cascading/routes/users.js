@@ -22,6 +22,24 @@ router.get('/:userId/orders', async (req, res) => {
   }
 });
 
+// Create a new user only if there are no users in the DB
+router.post('/', async (req, res) => {
+  try {
+    const userCount = await User.count();
+    if (userCount > 0) {
+      return res.status(400).json({ message: 'Users already exist. Cannot add more through this route.' });
+    }
+
+    const { name } = req.body;
+    if (!name) return res.status(400).json({ message: 'Name is required' });
+
+    const newUser = await User.create({ name });
+    res.status(201).json(newUser);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Delete a user (and cascade delete their orders)
 router.delete('/:userId', async (req, res) => {
   try {
