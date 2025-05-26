@@ -1,0 +1,45 @@
+  // babel 
+-> babel is a javascript compiler that converts modern javascript (es6) code into 
+backward compatable javascript that run in older browsers or node.js versions 
+ // why use babel in production : 
+-> babel transforms our source code so it :
+-> works in environment that dont support modern javascript features 
+-> can be minified and optimized for performance 
+-> excludes unneccessary development tools or code 
+
+// steps for production build with babel 
+1. install babel and required plugins 
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+
+2. create .babelrc or babel.config.json 
+{
+  "presets": ["@babel/preset-env"]
+}
+-> we can include plugin as needed (eg: for class properties, optuional chaining etc) 
+
+3. Transpile our code 
+-> use babel cli to transpile source code into dist/ directory 
+npx babel src --out-dir dist --copy-files --no-comments --minified
+
+this :
+-> converts modern js to compatible js 
+-> removes comments 
+-> minifies the output for performance 
+
+4. run the production code 
+-> now instead of running our source code (src/) we can run the compiled output 
+from dist/ 
+NODE_ENV=production node dist/index.js
+
+// enhancements for production 
+-> use webpack or rollup with babel for bundling and tree shaking 
+-> use .babelrc.env or environment specific configs to apply different settings in production 
+
+// production build using babel means 
+-> transpiling our modern javascript to compatable javascript 
+-> optimizing the code by removing dev features , minifying and stripping comments 
+-> preparing the codebase for execution in a production environment 
+
+
+
+
