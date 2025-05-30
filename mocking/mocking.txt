@@ -1,0 +1,31 @@
+// mocking in testing 
+-> mocking is the process of replacing real functions , modules, or services, with fake 
+implementations that simulate the behavior of the real ones 
+-> in simple terms : mocking fakes a part of our app so we can test another part 
+in isolation 
+
+// why we use mocking 
+-> isolate the unit under test : prevent external code from affecting our test       
+like apis or databases 
+-> faster tests : skip real network / database calls speeds up execution 
+-> test specific scenarios : simulate edge cases, errors, timeouts etc 
+-> avoid side  effects : prevent data from being written, sent or deleted 
+-> control dependencies : return consistent, predictable outputs from functions or apis 
+
+// types of mocks 
+function mock : replace a function with a fake eg : jest.fn() 
+module mock : replace an entire module (eg: fs, axios) // eg : jest.mock('axios') 
+manual mock : provide a custom fake implemntation // eg : custom mock file 
+spy : monitor function calls without replacing the implementation // eg : jest.spyOn(obj, 'method') 
+
+// common jest mocking methods 
+jest.fn()  : creates a mock function 
+mockReturnValue(value) : always return value when called 
+mockResolvedValue(value) : return a resolved promise(for async functions) 
+mockRejectedValue(error) : return a rejected promise(to simulate failure) 
+jest.mock('module') : auto mock a full module   
+jest.spyOn(obj, 'method') : spy on real method (can still call it or mock it) 
+mockImplementation(fn) : provide a custom implementation      
+
+
+

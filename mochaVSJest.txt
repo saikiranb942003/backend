@@ -1,0 +1,32 @@
+// difference between mocha and jest 
+-> mocha and jest are two of the most popular javascript testing frameworks 
+and while they can both be used to test applications they have   
+different philosophies, features and use cases 
+
+// jest 
+-> features : all in one: comes with test runner, assertion library, mocking , coverage and more 
+-> very easy to get started with - minimal config 
+-> zero config : yes, especially good for react/node projects 
+-> test structure : describe, test/it, beforeEach, afterAll, etc 
+-> built-in mocking system 
+-> built-in --coverage 
+-> allows snapshot testing great for frontend, ui components  
+-> faster due to parallel test execution 
+-> great for react, node.js, and full stack js 
+-> excellent docs and broad adoption in modern js projects  
+
+
+
+
+// mocha 
+-> requires us to combine with libraries like chai(assertions), sinon(mocking) 
+nyc(coverage) 
+-> more flexible but requires more setup 
+-> no zero config, needs manual config 
+-> uses describe, it, before, after 
+-> mocking : requires external libraries like sinon.js 
+-> coverage : needs nyc or similar for coverage 
+-> not supported snapshot testing 
+-> slower by default runs tests serially 
+-> very popular in node.js only projects or custom setups 
+-> 

@@ -1,0 +1,46 @@
+// snapshot 
+-> in jest a snapshot is a way to record and save the output of a function 
+or component and compare future outputs to this snapshot to detect changes 
+-> in simple a snapshot is like picture of our components output and making sure it doesnt unexpectly change over time 
+
+// why we use snapshot testing 
+-> detect uninteded changes : useful when ui or function outputs change unintentionally 
+-> verify consistent output : ensures that the same input produces the same output over time 
+-> automate ui testing : especially helpful in react apps to test component rendering 
+-> keep histrory : keeps track of changes to outputs over time for auditing or debugging 
+
+// when to use 
+-> testing ui components (like react) 
+-> testing api responses 
+-> testing serialized outputs of functions 
+-> ensuing complex objects dont change structure unintentionally 
+
+// run 
+npx jest 
+
+-> jest creates a file __snapshots__/greet.test.js.snap:
+
+// update snapshots 
+-> to update snapshots 
+npx jest --updateSnapshot
+# or shorthand:
+npx jest -u 
+
+// pros 
+-> Easy to write 
+-> Good for UI testing 
+-> Detects regressions quickly 
+
+// cons 
+-> Can lead to false confidence if snapshots are too large 
+-> Developers may blindly update snapshots without reviewing 
+-> Not ideal for deeply dynamic content 
+
+// 
+-> Use snapshots for static or semi-static content 
+-> Don’t overuse for large dynamic objects — assert specific properties instead. 
+-> Always review diffs before updating snapshots. 
+
+
+
+

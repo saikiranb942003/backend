@@ -1,0 +1,40 @@
+// jest 
+-> jest is a javascript testing framework 
+-> it is widely used for testing javascript and typescript applications especilly those built with react 
+but it works great with any javascript project 
+
+// why use jest 
+-> jest is popular because it offers complete testing solution out of the box 
+-> zero config : works out of the box for most js projects 
+-> smart testing : runs only relevent tests based on changes 
+-> fast and isolated : uses parallel test rubning and sandboxing 
+-> snapshot testing : great for ui testing (react components) 
+-> built in assrtions : no need for external assertion libraries 
+-> mocking : built in mocking for functions and modules 
+
+// install 
+npm install --save-dev jest
+
+// package.json
+"scripts": {
+  "test": "jest"
+}
+
+// run tests 
+-> npm test // jest will find files like .test.js and run the tests 
+
+// run specific test file 
+-> npx jest sum.test.js 
+
+npx jest --coverage --verbose to generate a coverage report or 
+npm test also works fine 
+
+to clear previous test runs : jest --clearCache 
+-> to rerun failed tests : jest --onlyChanged           
+-> to run all tests with coverage npx jest --coverage 
+
+
+
+
+
+
