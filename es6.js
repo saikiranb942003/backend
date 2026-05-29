@@ -24,6 +24,10 @@ import express from 'express'; // import statements
 const app = express();
 app.use(express.json());
 
+app.get('/', (req,res) => {
+   res.send('server is running succesfully');
+});
+
 // In-memory user array
 let users = [];
 
